@@ -1,0 +1,51 @@
+Python
+
+    cars = ["Ford", "Volvo", "BMW"]
+
+Java
+
+    String[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+C#
+
+    string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
+
+MATLAB (This needs some more testing!!)
+
+    a = [1 2 3 4]
+    a = [1 3 5; 2 4 6; 7 8 10]
+
+Excel (This also needs more testings)
+
+    a = [1, 2, 3, 4]
+    a = [1 3 5; 2 4 6; 7 8 10]
+
+
+- Languages have a couple of common data types, or can be worked around
+    String, char, int, double, float, bool,
+
+- Theres also a couple of basic syntax items that are similar across Languages
+    " ", { }, [ ], ' ', = , and \comma
+
+
+- For each lanuage we need the following fields
+    datatype = type, or "" if unsupported by lang
+    var_name = name of variable
+    splitter = "="
+    opener = "["
+    closer = "]"
+    stringsep = " ' " or ' " '
+    closer = ";" or "" if unsupported by lang
+    row_deliminator = ","
+    row_ender = ";" for multidimensional arrays
+
+- Need a generator of each data type to test the conversions
+
+- For languages that dont support floats or something, equate to closest neighbor like double
+
+- For languages that dont support boolean, flip to integer 1 and 0's.
+
+Make a class for each language, that will have the lookup tables for all the syntax attributes, then a single processing class will break it down into an
+array of itself of bits and pieces that can be understood by an encoding class. 
+
+When the decoder or encoder class is called, the constructor will handle the data assignents?
