@@ -49,3 +49,10 @@ Make a class for each language, that will have the lookup tables for all the syn
 array of itself of bits and pieces that can be understood by an encoding class. 
 
 When the decoder or encoder class is called, the constructor will handle the data assignents?
+
+TODO-
+
+Add removal of the string seps and char seps
+Add parse with no explicit data type
+add datatype from parser objects at end of decode
+add variable name from LHS of eqn in decode function
