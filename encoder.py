@@ -20,12 +20,24 @@ class Encoder:
     def set_input(self, input):
         self._input = input
 
-    def encode(self, input, lang):
-        print("encoding!")
+    def format_item(self, item, datatype):
+        lang = self._encoded_lang
+        out = ""
+        if datatype=="string":
+            out = lang.stringsep[0] + item + lang.stringsep[0]
+        elif datatype == "char":
+            out = lang.charsep + item + lang.charsep
+        else:
+            return item
         
+        return out
+    
 
-
-
+    def encode(self, input, lang):
+        self._input = input
+        self._encoded_lang = lang
+        self.encode()
+        
 
 
     def encode(self):
@@ -35,6 +47,8 @@ class Encoder:
         
         # Takes care of data type declaration (if req)
         output = ""
+        datatype = input[0]
+
         if(lang.explicit_type == False):
             output+=""
             input.remove(input[0])
@@ -53,9 +67,8 @@ class Encoder:
         output+=lang.opener
 
         for inp in input[0]:
-            
-            # oops this doesnt work! need to encode as the datatype
-            output+=inp + lang.row_deliminator
+            # Everything goes into format item
+            output += self.format_item(inp,datatype) + lang.row_deliminator
 
         # removes the extra comma
         output = output[0:len(output)-1]
@@ -67,3 +80,4 @@ class Encoder:
         #self.encode(self._input, self._encoded_lang)
 
     
+        

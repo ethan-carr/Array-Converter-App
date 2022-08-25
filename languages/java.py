@@ -8,6 +8,9 @@ class Java:
         self.opener = "{"
         self.closer = "}"
         self.stringsep = ["'", '"'] # Python can take either, hell for nesting
+        self.charsep = "'"
+         
+       
         self.line_end = ";"    # not necessary
         self.row_deliminator = ","
         self.row_ender = ";"
