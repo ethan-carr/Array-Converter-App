@@ -7,10 +7,9 @@ class Python:
         self.opener = "["
         self.closer = "]"
         self.stringsep = ["'", '"'] # Python can take either, hell for nesting
-        self.closer = ""    # not necessary
+        self.line_end = ""    # not necessary
         self.row_deliminator = ","
         self.row_ender = ";"
 
-        return self
-
- 
+    def to_string(self):
+        return "Python"
