@@ -48,9 +48,11 @@ class Decoder:
         output = self._output
         datatype = ""
 
+
+        print(input)
         lhs = self.filter_spaces(input[0:input.index(lang.splitter)])
         rhs = self.filter_spaces(input[len(lhs)+2:])
-        print(lhs, rhs)
+        #print(lhs, rhs)
 
         # Handle the left
         if(lang.explicit_type == True):
@@ -99,12 +101,14 @@ class Decoder:
                 itms.insert(0,self.filter_spaces(obj))
 
             if(datatype != ""): # We know the data type already!
-                print(datatype)
+                rhs=rhs
+                #print(datatype)
             else:
-                print("dope")
+                rhs=rhs
+                #print("dope")
 
             parser = Parser(lang)
-            print(datatype, "datatype")
+            #print(datatype, "datatype")
             if(datatype != ""):
                 objects =parser.parse(itms, lang.type_to_string(datatype))
             else:
@@ -116,7 +120,7 @@ class Decoder:
         else:
             print('whoopsies',rhs)
 
-        print(output)
+        #print(output)
         return output
 
 

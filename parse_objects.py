@@ -21,31 +21,29 @@ class Parser:
         lang = self._lang
 
         print("parsing with data type " + datatype)
-    
+        outs = []
         if datatype == "string":
+            #print("STRING!")
             #Remove the beginning and ending characters
             for itm in itms:
-                itm  = itm[1:len(itm)-2]
+                outs.append(itm[1:len(itm)-1])
 
-                return itms
         elif datatype == "int":
-            # No formatting required?
-            return itms
+            outs = itms
         elif datatype == "double":
-            return itms
-            # NRK
+            outs = itms
         elif datatype == "boolean":
             for itm in itms:
                 if itm == lang.bools[0]:
-                    itm = "true"
+                    outs.append("true")
                 elif itm == lang.bools[1]:
-                    itm = "false"
+                    outs.append("false")
         elif datatype == "char":
             for itm in itms:
-                itm = itm[1:len(itm)-1]
+                outs.append(itm[1:len(itm)-1])
         elif datatype == "object":
             return itms
 
-        return itms
+        return outs
 
     

@@ -32,3 +32,6 @@ class Java:
         #    return "byte"
         else:
             return("object")
+
+    def string_to_type(self, str):
+        return ""

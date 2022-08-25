@@ -56,3 +56,7 @@ Add removal of the string seps and char seps
 Add parse with no explicit data type
 add datatype from parser objects at end of decode
 add variable name from LHS of eqn in decode function
+need a tester class for all data types (and all languages)
+
+
+** For now lets just do arrays of 1 type
