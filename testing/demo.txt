@@ -1,0 +1,24 @@
+Java
+int[] intss={67602,59805,35036,88238,48216};
+double[] dubs={04.62538574,91477.99354,31092.45275,7913.277716,32335.46895};
+String[] strss={"yWnEGtOoWX","gbfhEpDreE","jrTQPCFWrV","cQBsTENXRN","IGrfuXWdiC"};
+char[] chss={'d','Q','W','q','m'};
+boolean[] boold={false,false,true,true,false};
+Object[] objs={dMdIo,aupRw,GEalt,THuzU,qlySz};
+
+Python
+intss=[27011,26046,27790,08245,72027]
+dubs=[67.73581514,4.384599686,4.675004982,80.23859528,5361.352326]
+strss=['pAMkKRSSST','ydoGzAvDuv','mGIHiJIBJP','YVnrCvsOsb','WvKxUNuroM']
+chss=['S','f','s','R','l']
+boold=[False,False,False,True,True]
+objs=[LSgiw,SUbQL,FaMUq,JOMjP,SFQzf]
+
+Excel
+13981	26640	15885	58909	34898	
+1100.138855	23013.71721	8.775121423	6.236183155	8740.638172	
+dchCCIsIfc	vHaSbLVtGD	scGQhpISdq	RlpFtUHtMS	OsIvEtyJho	
+u	a	C	W	s	
+TRUE	FALSE	TRUE	FALSE	FALSE	
+IeohE	qsIOh	cNUXl	qKEbJ	rGICJ	
+

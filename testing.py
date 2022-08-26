@@ -2,7 +2,7 @@ import random
 import string
 
 from languages import java, python, excel
-from encoder import Encoder
+from source.encoder import Encoder
 
 
 # Global Variables (changes settings for all tests)
@@ -126,7 +126,7 @@ def o_test():
 langs = [java.Java(), python.Python(), excel.Excel()]
 # int, double, string, char, bool
 
-file = open("demo.txt", "w")
+file = open("testing/demo.txt", "w")
 
 print("\n")
 for lang in langs:

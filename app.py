@@ -1,6 +1,6 @@
 from languages import python, java
-from decoder import Decoder
-from encoder import Encoder
+from source.decoder import Decoder
+from source.encoder import Encoder
 
 
 
