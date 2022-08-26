@@ -7,7 +7,7 @@ class Java:
         self.splitter = "=" 
         self.opener = "{"
         self.closer = "}"
-        self.stringsep = ["'", '"'] # Python can take either, hell for nesting
+        self.stringsep = ['"'] # Python can take either, hell for nesting
         self.charsep = "'"
          
        

@@ -27,6 +27,11 @@ class Encoder:
             out = lang.stringsep[0] + item + lang.stringsep[0]
         elif datatype == "char":
             out = lang.charsep + item + lang.charsep
+        elif datatype == "boolean":
+            if(item):
+                out = lang.bools[0]
+            else:
+                out = lang.bools[1]
         else:
             return item
         
@@ -41,10 +46,11 @@ class Encoder:
 
 
     def encode(self):
-        input = self._input
+        input2 = self._input
+        input = input2
         lang = self._encoded_lang
         #print(self._input, self._encoded_lang)
-        
+        #print(input)
         # Takes care of data type declaration (if req)
         output = ""
         datatype = input[0]

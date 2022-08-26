@@ -10,6 +10,7 @@ class Python:
         self.stringsep = ["'", '"'] # Python can take either, hell for nesting
         self.charsep = "'"
         
+        self.bools = ['True', 'False']
         
         self.line_end = ""    # not necessary
         self.row_deliminator = ","
