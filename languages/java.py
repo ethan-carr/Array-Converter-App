@@ -37,4 +37,17 @@ class Java:
             return("object")
 
     def string_to_type(self, str):
-        return ""
+        if(str == "string"):
+            return "String[]"
+        elif(str == "int"):
+            return "int[]"
+        elif(str == "double"):
+            return "double[]"
+        elif(str == "boolean"):
+            return "boolean[]"
+        elif(str == "char"):
+            return "char[]"
+        #elif(str == "byte[]"):
+        #    return "byte"
+        else:
+            return("Object[]")

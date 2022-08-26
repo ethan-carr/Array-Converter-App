@@ -1,4 +1,3 @@
-from ast import parse
 from languages import python, java#, csharp, matlab, excel 
 from parse_objects import Parser
 
@@ -15,13 +14,10 @@ class Decoder:
     def __init__(self):
         self.langs = [python.Python(), java.Java()]
     
-    
-    
     def select_lang(self, obj):
         self._lang = obj
         self.selected_language = obj.to_string()
         return self.selected_language
-   
     
     def input_data(self, input):
         self.input = input
@@ -47,28 +43,25 @@ class Decoder:
         input = self.input
         output = self._output
         datatype = ""
-
+        var_name = ""
 
         print(input)
         lhs = self.filter_spaces(input[0:input.index(lang.splitter)])
-        rhs = self.filter_spaces(input[len(lhs)+2:])
-        #print(lhs, rhs)
+        rhs = self.filter_spaces(input[len(lhs)+1:])
 
         # Handle the left
+        lhs = lhs.split(" ")
         if(lang.explicit_type == True):
-            lhs = lhs.split(" ")
-            if(len(lhs)>2):
-                print("error!")
-            else:
-                datatype = lhs[0]
-                output.append(lang.type_to_string(datatype))
-                var_name = lhs[1]
-                output.append(var_name)
-
-                
-        
+            print(len(lhs))
+            datatype = lhs[len(lhs)-2]
+            var_name = lhs[len(len)-1]
+        else:
+            print(len(lhs))
+            var_name = lhs[len(lhs)-1]
 
 
+        output.append(datatype)     
+        output.append(var_name)   
         # Handle the right
 
         # Gets rid of the opening bracket
@@ -100,27 +93,23 @@ class Decoder:
             for obj in objects:
                 itms.insert(0,self.filter_spaces(obj))
 
-            if(datatype != ""): # We know the data type already!
-                rhs=rhs
-                #print(datatype)
-            else:
-                rhs=rhs
-                #print("dope")
 
             parser = Parser(lang)
-            #print(datatype, "datatype")
-            if(datatype != ""):
-                objects =parser.parse(itms, lang.type_to_string(datatype))
-            else:
-                objects =parser.parse(itms)
 
+            if(datatype != ""): # We know the data type already!
+                objects =parser.parse(itms, lang.type_to_string(datatype))
+                #print(datatype)
+            else:               # Data type not specific by decoded language, need to figure it out!
+                objects =parser.parse(itms)
+                output[0] = parser.datatype
+                #print("dope")
             
             output.append(objects)
 
         else:
-            print('whoopsies',rhs)
+            print('An error has occurred somewhere?')
 
-        #print(output)
+        print(output)
         return output
 
 

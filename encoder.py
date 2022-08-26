@@ -53,7 +53,7 @@ class Encoder:
             output+=""
             input.remove(input[0])
         else:
-            output+=input[0]
+            output+=lang.string_to_type(input[0]) + " "
             input.remove(input[0])
 
         # Takes care of variable name
