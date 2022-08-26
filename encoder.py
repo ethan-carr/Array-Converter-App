@@ -41,19 +41,26 @@ class Encoder:
     def encode(self, input, lang):
         self._input = input
         self._encoded_lang = lang
-        self.encode()
+        return self.encode()
         
 
 
     def encode(self):
-        input2 = self._input
-        input = input2
+        input = self._input
         lang = self._encoded_lang
         #print(self._input, self._encoded_lang)
         #print(input)
         # Takes care of data type declaration (if req)
         output = ""
         datatype = input[0]
+        if(lang.to_string() == 'Excel'):
+            #print(input[1])
+            #print(input[2])
+            for inp in input[2]:
+                output += self.format_item(inp,datatype) + "\t"
+
+            print(output)    
+            return output
 
         if(lang.explicit_type == False):
             output+=""
@@ -83,6 +90,7 @@ class Encoder:
         output+=lang.closer + lang.line_end
 
         print(output)
+        return output
         #self.encode(self._input, self._encoded_lang)
 
     

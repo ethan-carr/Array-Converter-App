@@ -1,7 +1,7 @@
 import random
 import string
 
-from languages import java, python
+from languages import java, python, excel
 from encoder import Encoder
 
 
@@ -101,9 +101,6 @@ def b_test():
     #print(bool_test)
     return bool_test
 
-langs = [java.Java(), python.Python()]
-# int, double, string, char, bool
-
 def o_test():
     # Create a test array of STRINGS
     items_length = 5
@@ -123,11 +120,19 @@ def o_test():
     #print(string_test)
     return obj_test
 
+
+    
+
+langs = [java.Java(), python.Python(), excel.Excel()]
+# int, double, string, char, bool
+
+file = open("demo.txt", "w")
+
 print("\n")
 for lang in langs:
     tests = [i_test(),d_test(),s_test(),c_test(),b_test(),o_test()]
-    print(lang.to_string())
+    file.write(lang.to_string() + "\n")
     for test in tests:
         #print("test: ",test)
-        Encoder(test,lang).encode()
-    print("\n")
+        file.write(Encoder(test,lang).encode() + "\n")
+    file.write("\n")
