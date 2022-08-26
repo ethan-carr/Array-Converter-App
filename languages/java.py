@@ -1,20 +1,15 @@
 
 class Java:
     def __init__(self):
-        self.datatype = ""  # not necessary
         self.explicit_type = True
-        #self.var_name = "" will be handled by the decoder
         self.splitter = "=" 
         self.opener = "{"
         self.closer = "}"
-        self.stringsep = ['"'] # Python can take either, hell for nesting
+        self.stringsep = ['"'] 
         self.charsep = "'"
-         
-       
-        self.line_end = ";"    # not necessary
+        self.line_end = ";"  
         self.row_deliminator = ","
         self.row_ender = ";"
-
         self.bools = ["true", "false"]
         
     def to_string(self):
@@ -47,7 +42,7 @@ class Java:
             return "boolean[]"
         elif(str == "char"):
             return "char[]"
-        #elif(str == "byte[]"):
+        #elif(str == "byte[]"): # not yet lol
         #    return "byte"
         else:
             return("Object[]")
